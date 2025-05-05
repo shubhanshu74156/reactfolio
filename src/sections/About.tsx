@@ -35,8 +35,8 @@ const About: React.FC = () => {
                         <div className="relative">
                             <div className="w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-primary to-accent rounded-full overflow-hidden border-4 border-white shadow-xl">
                                 <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRnqVe4htHRPfXDCqmhrmmtYeQFycp4mD5Ew&s"
-                                    alt="John Doe"
+                                    src="public\SAVE_20230925_122554.jpg"
+                                    alt="Shubhanshu Tiwari"
                                     className="w-full h-full object-cover"
                                 />
                             </div>

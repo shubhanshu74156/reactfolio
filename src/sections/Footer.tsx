@@ -160,7 +160,7 @@ const Footer: React.FC = () => {
 
                         <Button
                             type="submit"
-                            className="w-full bg-white text-primary hover:bg-white/90">
+                            className="w-full bg-white text-black hover:bg-white/90 !text-black">
                             Send Message
                         </Button>
                     </motion.form>

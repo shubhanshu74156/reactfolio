@@ -4,7 +4,7 @@ import {
     useScroll,
     useTransform,
 } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import AnimatedText from "../components/AnimatedText";
 import Button from "../components/Button";
@@ -50,6 +50,16 @@ const Header: React.FC = () => {
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const handleDownloadResume = () => {
+        // Create a link element
+        const link = document.createElement("a");
+        link.href = "/resume.pdf";
+        link.download = "shubahnshu-tiwari-resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     const handleNavClick = (href: string) => {
@@ -118,6 +128,15 @@ const Header: React.FC = () => {
                             </a>
                         </motion.li>
                     ))}
+                    <motion.li>
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            icon={<Download size={16} />}
+                            onClick={handleDownloadResume}>
+                            Resume
+                        </Button>
+                    </motion.li>
                 </motion.ul>
 
                 {/* Mobile Menu Button */}
@@ -164,11 +183,23 @@ const Header: React.FC = () => {
                                     </a>
                                 </motion.li>
                             ))}
+                            <motion.li
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.3 }}>
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    icon={<Download size={16} />}
+                                    onClick={handleDownloadResume}>
+                                    Resume
+                                </Button>
+                            </motion.li>
                         </ul>
                     </motion.div>
                 )}
             </AnimatePresence>
-
             {/* Hero Content */}
             <div className="container mx-auto px-6 flex flex-col items-center justify-center h-screen text-center">
                 <motion.div

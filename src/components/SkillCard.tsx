@@ -34,6 +34,8 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
     const getIconUrl = (icon: string) => {
         if (icon === "amazonwebservices") {
             return "https://icon2.cleanpng.com/lnd/20241122/ve/85ee4860600f5fcfcd3ed203d10cd5.webp";
+        }else if (icon === "django") {
+            return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROs-ikGejn_thEzYV6B3b6ICQsCbFPAZbjqA&s";
         }
         return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.toLowerCase()}/${icon.toLowerCase()}-original.svg`;
     };

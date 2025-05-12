@@ -1,36 +1,15 @@
 import { motion } from "framer-motion";
 import {
-    Cloud,
-    LayoutGrid,
-    Palette,
-    Settings,
     Star,
-    StarOff,
+    StarOff
 } from "lucide-react";
 import React from "react";
 import { Skill } from "../types";
-
 interface SkillCardProps {
     skill: Skill;
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
-    // Determine icon based on category
-    const getIcon = (skill: Skill) => {
-        if (skill.category.includes("Frameworks")) {
-            return <Palette className="text-highlight" />;
-        }
-        if (skill.category.includes("System Architecture")) {
-            return <LayoutGrid className="text-yellow-500" />;
-        }
-        if (skill.category.includes("Cloud & DevOp")) {
-            return <Cloud className="text-blue-500" />;
-        }
-        if (skill.category.includes("Version Control")) {
-            return <Settings className="text-gray-500" />;
-        }
-        return <LayoutGrid className="text-neutral-500" />;
-    };
     // Generate stars based on level
     const renderStars = () => {
         const stars = [];
@@ -52,6 +31,13 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
         return stars;
     };
 
+    const getIconUrl = (icon: string) => {
+        if (icon === "amazonwebservices") {
+            return "https://icon2.cleanpng.com/lnd/20241122/ve/85ee4860600f5fcfcd3ed203d10cd5.webp";
+        }
+        return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.toLowerCase()}/${icon.toLowerCase()}-original.svg`;
+    };
+
     return (
         <motion.div
             className="bg-white p-4 rounded-lg shadow-sm flex items-center gap-4"
@@ -61,7 +47,11 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
             }}
             transition={{ duration: 0.2 }}>
             <div className="p-2 bg-neutral-50 rounded-full">
-                {getIcon(skill)}
+                <img 
+                    src={getIconUrl(skill.icon)}
+                    alt={skill.name}
+                    className="w-6 h-6"
+                />
             </div>
 
             <div className="flex-1">

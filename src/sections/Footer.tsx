@@ -102,7 +102,11 @@ const Footer: React.FC = () => {
                                             transition: { duration: 0.2 },
                                         }}
                                         whileTap={{ scale: 0.95 }}>
-                                        {getIcon(social.icon)}
+                                        <img 
+                                            src={social.icon}
+                                            alt={social.name}
+                                            className="w-6 h-6"     
+                                        />
                                     </motion.a>
                                 ))}
                             </div>

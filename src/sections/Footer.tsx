@@ -1,22 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowUp, Github, Linkedin, Mail, MapPin, Twitter } from "lucide-react";
+import { ArrowUp, Mail, MapPin } from "lucide-react";
 import React from "react";
 import Button from "../components/Button";
 import { navItems, socials } from "../data";
 
 const Footer: React.FC = () => {
-    const getIcon = (iconName: string) => {
-        switch (iconName) {
-            case "lucide-github":
-                return <Github size={20} />;
-            case "lucide-twitter":
-                return <Twitter size={20} />;
-            case "lucide-linkedin":
-                return <Linkedin size={20} />;
-            default:
-                return null;
-        }
-    };
 
     const scrollToTop = () => {
         window.scrollTo({

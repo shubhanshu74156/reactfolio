@@ -1,7 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import { ExternalLink, Github } from 'lucide-react';
+import React from 'react';
 import { Project } from '../types';
-import { Github, ExternalLink } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
